@@ -1077,7 +1077,7 @@ SMODS.Joker {
     config = {extra = {Xmult_gain = 1.5, Xmult = 1.5}},
     loc_vars = function(self, info_queue, card)
           info_queue[#info_queue + 1] = { key = 'hc_jimble_comment', set = 'Other' }
-        return {card.ability.extra.Xmult_gain, card.ability.extra.Xmult, key = card.ability.eternal and "j_jabong_jimbyramid_alt" or nil }
+        return {card.ability.extra.Xmult_gain, card.ability.extra.Xmult, key = card.edition and card.edition.negative and "j_jabong_jimbyramid_alt" or nil }
        
     end,
     calculate = function(self, card, context)
