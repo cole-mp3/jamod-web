@@ -1446,6 +1446,57 @@ key = "chard",
         end
     end
 } 
+SMODS.Joker {
+    key = "turn",
+    atlas = "sccre",
+    pos = { x = 0, y = 0},
+     rarity = 'jabong_Max',
+    config = {extra = {Echips = 5}},
+    loc_vars = {
+        return {
+            card.ability.extra.Echips
+        }
+    }
+    loc_txt = {
+        name = "{C:dark_edition,E:1,s:1.1}Moonlight Butterfly{} {X:chips,C:white,s:0.8}(awakening:Ɐ){}",
+        text = {
+            "{C:attention}Every card{} is considered to have every enhancement,{C:inactive,s:0.8}(except stone){}",
+            "and played cards get a {C:red}Ɐ Seal{}. {C:red}Ɐ seal{} cards give {X:inactive,C:white}^#1#{} chips"
+
+        },
+    },
+     calculate = function(self, card, context)
+        if context.before and not context.blueprint then
+            local numbr = 0
+            for _, scored_card in ipairs(context.scoring_hand) do
+                    numbr = numbr + 1 
+                    scored_card:set_seal('jabong_butterlfy', nil, true)
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            play_sound( 'jabong_whatdoicallthis')
+                            scored_card:juice_up()
+                            return true
+                        end
+                    }))
+                end
+            if numbr > 0 then
+                return {
+                    
+                    message = "Ɐ!",
+                    colour = G.C.TAROT
+                }
+            end
+        end
+        if context.individual and context.cardarea == G.play then
+            local has_seal = card.seal
+            if  not has_seal == nil then
+                return {
+                    echips = card.ability.extra.Echips
+                }
+            end
+        end
+    end
+}
 --next joker: DIVER
 -- ^20 mult 
 -- changes the boss blind music to DIVER by nico touches the walls

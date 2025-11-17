@@ -152,6 +152,17 @@ return {
                     "go gambling.",
                 },
             },
+            hc_math_comment = {
+                name = {
+                    "Operators"
+                },
+                text = {
+                    "These 'seals' do various things",
+                    "based on their operations",
+                    "{C:inactive}(+,-,*,/,etc.), i havent done the rest yet{}"
+                },
+            },
+            
             hc_ms_comment = {
                 name = {
                     "Mobile Suit",

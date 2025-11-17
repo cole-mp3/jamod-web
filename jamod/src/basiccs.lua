@@ -125,45 +125,7 @@ SMODS.Atlas ({
     py = 95,
     path = "crads/hyperize.png",
 })
-SMODS.Consumable {
-    set = 'Spectral',
-    key = 'hyperize',
-    config = {
-    
-        max_highlighted = 1,
-    },
-     loc_vars = function(self, info_queue, card)
-       
-        return {vars = {(card.ability or self.config).max_highlighted}}
-    end,
-    loc_txt = {
-        name = 'Quazar',
-        text = {
-            "Levels up{C:attention}every hand{}",
-            "by {C:attention}10{} levels.",
-            "{C:inactive}A quazar is pure mass, released by a black hole.{}"
-        }
-    },
-    cost = 6,
-    atlas = "hyperen", --please replace this
-    pos = {x=0, y=0},
-    use = function(self, card, area, copier)
-        for i = 1, math.min(#G.hand.highlighted, card.ability.max_highlighted) do
-            G.E_MANAGER:add_event(Event({func = function()
-                play_sound('jabong_womp')
-                card:juice_up(0.3, 0.5)
-                -- i still have to code this in so uhhh
-    
-                return true end }))
-            
-       
 
-
-            delay(0.5)
-        end
-        G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2,func = function() G.hand:unhighlight_all(); return true end }))
-    end
-}
 SMODS.Consumable {
  set = 'jabong_Material',
  key = 'coppering',
@@ -214,6 +176,7 @@ SMODS.Consumable {
         return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
     end,
 }
+--[[
 SMODS.Consumable {
     set = 'Spectral',
     key = 'mssummon',
@@ -244,6 +207,7 @@ SMODS.Consumable {
         return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
     end,
 }
+    ]]--
 SMODS.Consumable {
  set = 'jabong_Material',
  key = 'slamize',
@@ -652,7 +616,58 @@ SMODS.Consumable {
         return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
     end
 }
-           
+SMODS.Consumable {
+    set = 'Spectral',
+    key = "math",
+     hidden = true,
+ soul_set = 'jabong_Material',
+ can_repeat_soul = true,
+    atlas = "rsatlas",
+    pos = {x = 0, y = 0},
+    loc_txt = {
+        name = "Arithmetic",
+        text = {
+            "Gives {C:attention}1{} selected card the",
+            "{C:attention}Addition{} {X:tarot,C:white,E:1}Operator{}",
+            "{C:inactive}im bored{}"
+        }
+    },
+     config = { extra = { seal = 'jabong_operad' }, max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'hc_math_comment', set = 'Other' }
+         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { card.ability.max_highlighted} }
+    end,
+    use = function(self, card, area, copier)
+        local conv_card = G.hand.highlighted[1]
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('jabong_damn')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                conv_card:set_seal(card.ability.extra.seal, nil, true)
+                return true
+            end
+        }))
+
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+    end,
+}           
 
 
 -- vouchers(I dont wanna make another lua file)

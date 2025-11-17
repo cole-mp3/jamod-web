@@ -44,8 +44,8 @@ SMODS.Blind {
         name = "Arby's",
         text = {
             "increase this blind's requirements",
-            "by a whopping 25% if an",
-            "enhanced card is played"
+            "by a whopping 75% if an",
+            "enhanced card is in your played hand."
         },
     },
     
@@ -57,7 +57,7 @@ SMODS.Blind {
                          if next(SMODS.get_enhancements(v)) then found = true end
                                 end
                             if found then
-                          G.GAME.blind.chips = math.floor(G.GAME.blind.chips + G.GAME.blind.chips * 0.25)
+                          G.GAME.blind.chips = math.floor(G.GAME.blind.chips + G.GAME.blind.chips * 0.75)
                             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
                               blind.triggered = true 
                 G.E_MANAGER:add_event(Event({
