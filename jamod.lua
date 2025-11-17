@@ -39,6 +39,7 @@ assert(SMODS.load_file("config.lua"))()
 SMODS.current_mod.optional_features = {
     retrigger_joker = true,
     quantum_enhancements = true,
+    post_trigger = true,
 }
 --[[
 SMODS.Stake {
@@ -95,6 +96,7 @@ SMODS.ObjectType {
         j_jabong_hanging = true,
         j_jabong_chard = true,
         j_jabong_charisafuckingsimp = true,
+        j_jabong_turn = true,
     },
 }
 SMODS.Sound{

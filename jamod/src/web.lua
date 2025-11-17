@@ -133,3 +133,13 @@ SMODS.Tag {
         end
     end
 }
+-- i think i know how this works
+SMODS.Font {
+  key = "emoji",
+  path = "ArianaVioleta-dz2K.ttf"
+}
+SMODS.Gradient {
+    key = 'maxient',
+    colours = {G.C.MONEY, G.C.RED},
+    cycle = 2
+}
