@@ -95,12 +95,12 @@ SMODS.Seal {
      badge_colour = HEX("1d4fd7"),
     config = { extra = { Emult = 1.23, dollars = 25} },
     loc_vars = function(self, info_queue)
-        return { vars = { self.config.extra.Emult, self.config,extra.dollars } }
+        return { vars = { self.config.extra.Emult, self.config.extra.dollars } }
     end,
     atlas = "satlas",
     pos = {x=0, y=0},
     loc_txt = {
-                name = "Ɐ Seal",
+                name = "Turn A Seal",
                 text = {
                     "{X:incative,C:white}^^#1#{} Mult,",
                     "{C:money}+$#2#{}"

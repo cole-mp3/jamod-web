@@ -1452,16 +1452,16 @@ SMODS.Joker {
     pos = { x = 0, y = 0},
      rarity = 'jabong_Max',
     config = {extra = {Echips = 5}},
-    loc_vars = {
+    loc_vars = function (self, info_queue, card)
         return {
-            card.ability.extra.Echips
+            vars = { card.ability.extra.Echips} 
         }
-    }
+    end,
     loc_txt = {
-        name = "{C:dark_edition,E:1,s:1.1}Moonlight Butterfly{} {X:chips,C:white,s:0.8}(awakening:Ɐ){}",
+        name = "{C:dark_edition,E:1,s:1.1}Moonlight Butterfly{} {X:chips,C:white,s:0.8}(awakening:Turn_A){}",
         text = {
             "{C:attention}Every card{} is considered to have every enhancement,{C:inactive,s:0.8}(except stone){}",
-            "and played cards get a {C:red}Ɐ Seal{}. {C:red}Ɐ seal{} cards give {X:inactive,C:white}^#1#{} chips"
+            "and played cards get a {C:red}Turn A Seal{}. {C:red}Turn A seal{} cards give {X:inactive,C:white}^#1#{} chips"
 
         },
     },
