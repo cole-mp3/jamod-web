@@ -125,7 +125,9 @@ pools = {["halfjokes"] = true},
 blueprint_compat = true,
 cost = 4,
 discovered = true,
-config = { extra = { odds = 2, repetitions = 1}, },
+config = { 
+    extra_slots_used = -0.5,
+    extra = { odds = 2, repetitions = 1, slots_used = 1},  },
 loc_txt = {
 name = "Buskin",
 text = {
@@ -156,7 +158,9 @@ pools = {["halfjokes"] = true},
 blueprint_compat = true,
 cost = 4,
 discovered = true,
-config = { extra = { odds = 2, repetitions = 1 }, },
+config = { 
+    extra_slots_used = -0.5,
+    extra = { odds = 2, repetitions = 1 }, },
 loc_txt = {
 name = "Sock",
 text = {
@@ -167,7 +171,7 @@ text = {
 loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = { key = 'hc_half_comment', set = 'Other' }
 local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'jabong_sock')
-return { vars = { numerator, denominator } }
+return { vars = { numerator, denominator, } }
 end,
 calculate = function(self, card, context)
 if context.repetition and context.cardarea == G.play and not context.other_card:is_face() and SMODS.pseudorandom_probability(card, 'jabong_sock', 1, card.ability.extra.odds) then
@@ -499,7 +503,9 @@ SMODS.Joker {
             "All played face cards give {X:red,C:white}X#1#{} Mult."
         },
     },
-    config = {extra = {Xmult = 1.5}},
+    config = {
+        extra_slots_used = -0.5,
+        extra = {Xmult = 1.5}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'hc_half_comment', set = 'Other' }
         return {vars = {card.ability.extra.Xmult}}
@@ -531,7 +537,9 @@ SMODS.Joker {
             "All played non-face cards give {X:blue,C:white}X#1#{} chips."
         },
     },
-    config = {extra = {xmult = 1.3}},
+    config = {
+        extra_slots_used = -0.5,
+        extra = {xchips = 1.3}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'hc_half_comment', set = 'Other' }
         return {vars = {card.ability.extra.xchips}}
@@ -1069,16 +1077,9 @@ SMODS.Joker {
     config = {extra = {Xmult_gain = 1.5, Xmult = 1.5}},
     loc_vars = function(self, info_queue, card)
           info_queue[#info_queue + 1] = { key = 'hc_jimble_comment', set = 'Other' }
-        return {card.ability.extra.Xmult_gain, card.ability.extra.Xmult}
+        return {card.ability.extra.Xmult_gain, card.ability.extra.Xmult, key = card.ability.eternal and "j_jabong_jimbyramid_alt" or nil }
+       
     end,
-    loc_txt = {
-        name = "Jimbonium",
-        text = {
-            "This card gains {X:red,C:white}X#1#{} Mult per",
-            "hand played with a level {C:attention}less than or equal to 1{}.",
-            "{C:inactive}Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
-        },
-    },
     calculate = function(self, card, context)
     
         if context.before then
@@ -1384,7 +1385,9 @@ key = "hanging",
             "played cards in a hand {C:attention}#1#{} time"
         },
     },
-    config = {extra = {repetitions = 1}},
+    config = {
+        extra_slots_used = -0.5,
+        extra = {repetitions = 1}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'hc_half_comment', set = 'Other' }
         return {vars = {card.ability.extra.repetitions}}
@@ -1424,7 +1427,9 @@ key = "chard",
             "the {C:attention}first and last{} {C:attention}#1#{} time"
         },
     },
-    config = {extra = {repetitions = 1}},
+    config = {
+        extra_slots_used = -0.5,
+        extra = {repetitions = 1}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'hc_half_comment', set = 'Other' }
               info_queue[#info_queue + 1] = { key = 'hc_slander_comment', set = 'Other' }

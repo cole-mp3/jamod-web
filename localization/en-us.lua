@@ -87,6 +87,23 @@ return {
                 "{C:inactive}Currently{}{X:red,C:white}X#1#{}"
             },
           },
+          j_jabong_jimbyramid = {
+            name = "Jimbonium",
+        text = {
+            "This card gains {X:red,C:white}X#1#{} Mult per",
+            "hand played with a level {C:attention}less than or equal to 1{}.",
+            "{C:inactive}Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
+        },
+        
+          },
+           j_jabong_jimbyramid_alt = {
+            name = "{C:red,E:2,s:1.3}EVIL{} Jimbonium!!!!!!!!",
+        text = {
+            "This card EVILLY gains {X:red,C:white}X#1#{} Mult per",
+            "hand played with a EVIL level {C:attention}less than or equal to 1{}.",
+            "{C:inactive}Evil Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
+        },
+    },
           j_jabong_gundx = {
             name = "Gundam Double X",
             text = {
