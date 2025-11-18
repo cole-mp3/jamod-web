@@ -1152,7 +1152,7 @@ SMODS.Joker {
             "{C:inactive}(actualmente{} {X:inactive,C:white}^^#2#{}{C:inactive}){}"
         }
     },
-    config = {extra = {Emult_mod = 0.05, Emult = 2}},
+    config = {extra = {Emult_mod = 1.05, Emult = 2}},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.Emult_mod, card.ability.extra.Emult } }
     end,
