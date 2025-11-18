@@ -138,6 +138,14 @@ SMODS.Font {
   key = "Ariana", --fuck i forgot this doesnt have emojis FUUUUU
   path = "ArianaVioleta-dz2K.ttf"
 }
+SMODS.Font {
+    key = "japan",
+    path = "Firstgundam-8aVg.ttf"
+}
+SMODS.Font {
+    key = "fire",
+    path = "SupporterpersonaluseRegular-EazBz.otf"
+}
 SMODS.Gradient {
     key = 'maxient',
     colours = {G.C.MONEY, G.C.RED},

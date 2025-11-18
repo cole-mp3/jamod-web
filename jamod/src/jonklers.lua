@@ -1535,7 +1535,7 @@ SMODS.Joker {
             "Reduces by {X:red,C:white}X#2#{} at the end of the round played."
         }
     },
-    config = {extra = {Xmult = 2.5, Xmult_gain = 0.5}}
+    config = {extra = {Xmult = 2.5, Xmult_gain = 0.5}},
     loc_vars = function(self, info_queue, card)
         return {
             card.ability.extra.Xmult,
@@ -1559,39 +1559,43 @@ SMODS.Joker {
            
         end
     end
+end
 }
 SMODS.Joker {
-    key = "cloudhuh",
+    key = "cyan",
     atlas = "sccre",
-    pos = {x = 0, y = 0},
-    rarity = 3,
+    pos = { x = 0, y = 0},
     loc_txt = {
-        name = "CLoud...8????",
+        name = "Cyan Jonkler",
         text = {
-            "This joker gives played cards",
-            "{C:money}$#1#{} {C:attention,s:1.2}PERMANENTLY{}",
-            "Per {C:attention}8{} in your full deck.",
-            "{C:inactive}Currently recieving{} {C:money}$#2#{{C:inactive}.{}"
-        }
+            "This card gains {X:red,C:blue}X#1#{} Blue Mult, compounding, when a card is scored.",
+            "{C:inactive}figure out the number yourself lmao{}"
+        },
     },
-    config = {extra = {perma_p_dollars = 0.5, }}
-    loc_vars = function(self, info_queue, card)
-         local och_tally = 0
-        if G.playing_cards then
-            for _, playing_card in ipairs(G.playing_cards) do
-                if playing_card:get_id() == 8 then och_tally = och_tally + 1 end
-            end
-        end
-        return { vars = { card.ability.extra.perma_p_dollars, card.ability.extra.perma_p_dollars * och_tally } }
+    config = { extra = { Xmult = 1.5, }},
+     loc_vars = function(self, info_queue, card)
+        return {
+            card.ability.extra.Xmult,
+        }
     end,
-        calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play the
-            context.other_card.ability.perma_p_dollars = context.other_card.ability.perma_p_dollars or 0
-            context.other_card.ability.perma_p_dollars = context.other_card.ability.perma_p_dollars * och_tally
-            return {
-                extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
-                card = card
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local bluemult = hand_chips * card.ability.extra.Xmult
+            return{
+                xmult = bluemult
             }
+            
         end
-    end
+         if context.individual and context.cardarea == G.play and not context.blueprint then
+             card.ability.extra.Xmult = card.ability.extra.Xmult * card.ability.extra.Xmult
+
+            return {
+                message = "Upgraded!",
+                colour = G.C.ENHANCEMENT,
+                message_card = card
+                
+            }
+            
+        end
+end
 }

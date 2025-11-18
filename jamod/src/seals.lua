@@ -123,8 +123,10 @@ SMODS.Seal {
      badge_colour = HEX("1d4fd7"),
     atlas = "satlas",
     pos = {x=0, y=0},
-    config = {extra = {Xmult = 2}}
-
+    config = {extra = {Xmult = 2}},
+ loc_vars = function(self, info_queue, card)            
+        info_queue[#info_queue + 1] = { key = 'hc_bmult_comment', set = 'Other' }
+    end,
     loc_txt = {
                 name = "Multiplication",
                 text = {
@@ -137,54 +139,18 @@ SMODS.Seal {
     calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
                 local current_hand_chips = hand_chips
-                local current_hand_mult = hand_mult
+                local bluemult = hand_chips * hand_chips
                 return {
-                    xmult = hand_chips * hand_mult
+                    mult = bluemult,
+                    message =  "+"..bluemult.." Mult",
+                    colour = G.C.BLUE
                 }
             end
     end,
 
 
 }
-SMODS.Seal {
-    key = 'opersq',
-     badge_colour = HEX("1d4fd7"),
-    atlas = "satlas",
-    pos = {x=0, y=0},
-    config = {extra = {mult = 90}},
-    loc_vars = function(self, info_queue, card)
-        return {
-            self.config.extra.mult
-        }
-    end,
-    loc_txt = {
-                name = "Square root",
-                text = {
-                    "This Card gives +#1# mult,",
-                    "and (if possible), is considered ",
-                    "it's {C:attention}square root.{}",
-                    "{C:inactive}but i cant code so for now they're gonna be treated as gold{}"
-                },
-                label = "Sqrt (x)"
-    },
-    calculate = function(self, card, context)
-            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
-                return {
-                    mult = self.config.extra.mult
-                }
-            end
-            if context.check_enhancement and context.other_card.base.value == "4" or
-            context.check_enhancement and context.other_card.base.value == "9" or
-            context.check_enhancement and context.other_card.base.value == "14" --Aces are ones!
-            then
-            return {
-                m_gold = true,
-                 }
-            end
-    end,
 
-
-}
 
 -- all seal is getting a recode.
 -- just uhh

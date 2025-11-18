@@ -42,11 +42,11 @@ return {
                 }
             },
             j_jabong_vegeta = {
-                name = 'Intelligent Joker',
+                name = '{f:jabong_Ariana}Intelligent Joker{}',
                 text = {
                     "{X:red,C:white}X#1#{} Mult, and",
                     "{C:red}+#1#{} Mult if played cards",
-                    "Are {C:hearts}Hearts{}."
+                    "are {C:hearts}Hearts{}."
                 }
             },
           j_jabong_soulbottle = {
@@ -97,11 +97,11 @@ return {
         
           },
            j_jabong_jimbyramid_alt = {
-            name = "{C:red,E:2,s:1.3}EVIL{} Jimbonium!!!!!!!!",
+            name = "{f:jabong_fire,s:1.3}EVIL{} Jimbonium!!!!!!!!",
         text = {
-            "This card EVILLY gains {X:red,C:white}X#1#{} Mult per",
-            "hand played with a EVIL level {C:attention}less than or equal to 1{}.",
-            "{C:inactive}Evil Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
+            "This card {f:jabong_fire,s:1.3}EVILLY{} gains {X:red,C:white}X#1#{} Mult per",
+            "hand played with a {f:jabong_fire,s:1.3}EVIL{} level {C:attention}less than or equal to 1{}.",
+            "{f:jabong_fire,s:1.3}Evil{}{C:inactive} Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
         },
     },
           j_jabong_gundx = {
@@ -224,6 +224,17 @@ return {
                 },
                 text = {
                     "vegeta :)",
+
+                }
+            },
+            hc_bmult_comment = {
+                name = {
+                    "{X:red,C:blue}Blue{} Mult",
+                },
+                text = {
+                    "The mult (or XMult) value this gives",
+                    "is equal to the hand's chips.",
+                    "Xmult is that, but times a given amount"
 
                 }
             },
