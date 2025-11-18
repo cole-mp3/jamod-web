@@ -722,7 +722,7 @@ SMODS.Voucher {
                 -- just like the last one, let's see if it works :)
                 SMODS.add_card { 
                     key = "j_jabong_fisherman",
-                    edition = 'e_negative' }
+                    edition = 'e_negative', eternal = true, }
                     check_for_unlock { type = 'ach_fishing' }
                 G.GAME.jabong_Feesh_rate = card.ability.extra.rate
                 return true
