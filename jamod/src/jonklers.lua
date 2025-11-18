@@ -1544,7 +1544,10 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            xmult = card.ability.extra.Xmult
+            return{
+                xmult = card.ability.extra.Xmult
+            }
+            
         end
         if context.end_of_round and context.main_eval and context.game_over == false then
             if card.ability.extra.Xmult - card.ability.extra.Xmult_gain <= 0.9 then
