@@ -97,11 +97,11 @@ return {
         
           },
            j_jabong_jimbyramid_alt = {
-            name = "{f:jabong_fire,s:1.3}EVIL{} Jimbonium!!!!!!!!",
+            name = "{f:jabong_fire,s:1.3,C:red}EVIL{} Jimbonium!!!!!!!!",
         text = {
-            "This card {f:jabong_fire,s:1.3}EVILLY{} gains {X:red,C:white}X#1#{} Mult per",
-            "hand played with a {f:jabong_fire,s:1.3}EVIL{} level {C:attention}less than or equal to 1{}.",
-            "{f:jabong_fire,s:1.3}Evil{}{C:inactive} Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
+            "This card {f:jabong_fire,s:1.3,C:red}EVILLY{} gains {X:red,C:white}X#1#{} Mult per",
+            "hand played with a {f:jabong_fire,s:1.3,C:red}EVIL{} level {C:attention}less than or equal to 1{}.",
+            "{f:jabong_fire,s:1.3,C:red}Evil{}{C:inactive} Currently{} {X:red,C:white}X#2#{}{C:inactive}.{}"
         },
     },
           j_jabong_gundx = {
@@ -202,7 +202,7 @@ return {
                 },
                 text = {
                     "This card comes from the",
-                    "{E:1,s:1.3,C:dark_edition}Mobile Suit Gundam{}",
+                    "{E:1,s:1.1,C:dark_edition,f:jabong_gundamit}Mobile Suit Gundam{}",
                     "franchise" 
 
                 }

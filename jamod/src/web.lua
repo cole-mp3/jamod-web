@@ -134,8 +134,9 @@ SMODS.Tag {
     end
 }
 -- i think i know how this works
+--update: i did
 SMODS.Font {
-  key = "Ariana", --fuck i forgot this doesnt have emojis FUUUUU
+  key = "Ariana", 
   path = "ArianaVioleta-dz2K.ttf"
 }
 SMODS.Font {
@@ -145,6 +146,10 @@ SMODS.Font {
 SMODS.Font {
     key = "fire",
     path = "SupporterpersonaluseRegular-EazBz.otf"
+}
+SMODS.Font {
+    key = "gundamit",
+    path = "SerpentineRegular.ttf"
 }
 SMODS.Gradient {
     key = 'maxient',
