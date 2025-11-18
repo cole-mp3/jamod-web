@@ -1502,7 +1502,96 @@ SMODS.Joker {
         end
     end
 }
---next joker: DIVER
--- ^20 mult 
--- changes the boss blind music to DIVER by nico touches the walls
--- designed for naneinf motivation (and to see who can time it to the drop)
+SMODS.Joker {
+    key = "hotdurger",
+    atlas = "sccre",
+    pos = {x = 0, y = 0},
+    rarity = 1,
+    loc_txt = {
+        name = "Hotdurger",
+        text = {
+            "{X:inactive,C:white}^^#1#{} mult.",
+            "{C:red}Self Destructs{} on round end."
+        }
+    },
+    config = {extra = {Emult = 1.5}},
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'hc_hot_comment', set = 'Other' }
+              info_queue[#info_queue + 1] = { key = 'hc_durger_comment', set = 'Other' }
+        return {
+            card.ability.extra.Emult
+        }
+    end,
+}
+SMODS.Joker {
+    key = "Caliroll",
+    atlas = "sccre",
+    pos = {x = 0, y = 0},
+    rarity = 1,
+    loc_txt = {
+        name = "California roll",
+        text = {
+            "Scored cards give {X:red,C:white}X#1#{} Mult.",
+            "Reduces by {X:red,C:white}X#2#{} at the end of the round played."
+        }
+    },
+    config = {extra = {Xmult = 2.5, Xmult_gain = 0.5}}
+    loc_vars = function(self, info_queue, card)
+        return {
+            card.ability.extra.Xmult,
+            card.ability.extra.Xmult_gain
+        }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            xmult = card.ability.extra.Xmult
+        end
+        if context.end_of_round and context.main_eval and context.game_over == false then
+            if card.ability.extra.Xmult - card.ability.extra.Xmult_gain <= 0.9 then
+                SMODS.destroy_cards(card, nil, nil, true)
+                return {
+                    message = "eated!",
+                    colour = G.C.CHIPS
+                }
+            else
+            card.ability.extra.Xmult = card.ability.extra.Xmult - card.ability.extra.Xmult_gain
+           return{ message = "-!", colour = G.C.ATTENTION}
+           
+        end
+    end
+}
+SMODS.Joker {
+    key = "cloudhuh",
+    atlas = "sccre",
+    pos = {x = 0, y = 0},
+    rarity = 3,
+    loc_txt = {
+        name = "CLoud...8????",
+        text = {
+            "This joker gives played cards",
+            "{C:money}$#1#{} {C:attention,s:1.2}PERMANENTLY{}",
+            "Per {C:attention}8{} in your full deck.",
+            "{C:inactive}Currently recieving{} {C:money}$#2#{{C:inactive}.{}"
+        }
+    },
+    config = {extra = {perma_p_dollars = 0.5, }}
+    loc_vars = function(self, info_queue, card)
+         local och_tally = 0
+        if G.playing_cards then
+            for _, playing_card in ipairs(G.playing_cards) do
+                if playing_card:get_id() == 8 then och_tally = och_tally + 1 end
+            end
+        end
+        return { vars = { card.ability.extra.perma_p_dollars, card.ability.extra.perma_p_dollars * och_tally } }
+    end,
+        calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play the
+            context.other_card.ability.perma_p_dollars = context.other_card.ability.perma_p_dollars or 0
+            context.other_card.ability.perma_p_dollars = context.other_card.ability.perma_p_dollars * och_tally
+            return {
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
+                card = card
+            }
+        end
+    end
+}

@@ -169,6 +169,22 @@ return {
                     "go gambling.",
                 },
             },
+            hc_hot_comment = {
+                name = {
+                    "Guy 1:"
+                },
+                text = {
+                    "You ever heard of a hot dog burger?",
+                },
+            },
+            hc_durger_comment = {
+                name = {
+                    "Guy 2:"
+                },
+                text = {
+                    "You mean a  {C:dark_edition,s:1.1,E:1}hotdurger{}?",
+                },
+            },
             hc_math_comment = {
                 name = {
                     "Operators"
