@@ -97,8 +97,8 @@ SMODS.Seal {
 SMODS.Seal {
     key = 'opermul',
      badge_colour = HEX("1d4fd7"),
-    atlas = "satlas",
-    pos = {x=0, y=0},
+    atlas = "sticklas",
+    pos = {x=0, y=1},
     config = {extra = {Xmult = 2}},
  loc_vars = function(self, info_queue, card)            
         info_queue[#info_queue + 1] = { key = 'hc_bmult_comment', set = 'Other' }

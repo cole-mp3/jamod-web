@@ -156,6 +156,12 @@ SMODS.Gradient {
     colours = {G.C.MONEY, G.C.RED},
     cycle = 2
 }
+SMODS.Atlas {
+    key = "sticklas",
+    path = "sticklas.png"
+    px = 71, 
+    py = 95
+}
 SMODS.Sticker {
     key = "operad",
     badge_colour = HEX 'fda200',
@@ -166,8 +172,8 @@ SMODS.Sticker {
                     "current played hand whne scored."
                 }
     },
-   
-    pos = { x = 0, y = 2 },
+   atlas = "sticklas",
+    pos = { x = 0, y = 0 },
     rate = 0,
     apply = function(self, card, val)
         card.ability[self.key] = val
