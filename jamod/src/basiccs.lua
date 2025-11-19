@@ -616,6 +616,7 @@ SMODS.Consumable {
         return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
     end
 }
+--[[
 SMODS.Consumable {
     set = 'Spectral',
     key = "math",
@@ -667,7 +668,7 @@ SMODS.Consumable {
             end
         }))
     end,
-}           
+}  ]]--         
 
 
 -- vouchers(I dont wanna make another lua file)

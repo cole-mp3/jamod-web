@@ -67,30 +67,6 @@ SMODS.Seal {
     end,
 }
 SMODS.Seal {
-    key = 'operad',
-     badge_colour = HEX("1d4fd7"),
-    atlas = "satlas",
-    pos = {x=0, y=0},
-    loc_txt = {
-                name = "Addition",
-                text = {
-                    "Adds the {C:blue}+chips{} value of the",
-                    "current played hand whne scored."
-                },
-                label = "Addition"
-    },
-    calculate = function(self, card, context)
-            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
-                local current_hand_chips = hand_chips
-                return {
-                    chips = hand_chips
-                }
-            end
-    end,
-
-
-}
-SMODS.Seal {
     key = 'butterlfy',
      badge_colour = HEX("1d4fd7"),
     config = { extra = { Emult = 1.23, dollars = 25} },

@@ -156,3 +156,29 @@ SMODS.Gradient {
     colours = {G.C.MONEY, G.C.RED},
     cycle = 2
 }
+SMODS.Sticker {
+    key = "operad",
+    badge_colour = HEX 'fda200',
+    loc_txt = {
+                name = "Addition",
+                text = {
+                    "Adds the {C:blue}+chips{} value of the",
+                    "current played hand whne scored."
+                }
+    },
+   
+    pos = { x = 0, y = 2 },
+    rate = 0,
+    apply = function(self, card, val)
+        card.ability[self.key] = val
+    end
+     calculate = function(self, card, context)
+            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play or context.joker_main then
+                local current_hand_chips = hand_chips
+                return {
+                    chips = hand_chips
+                }
+            end
+    end,
+
+}
