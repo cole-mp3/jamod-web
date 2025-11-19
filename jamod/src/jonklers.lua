@@ -1546,7 +1546,7 @@ SMODS.Joker {
     pos = {x = 0, y = 0},
     rarity = 1,
     loc_txt = {
-        name = "Hotdurger",
+        name = "{f:jabong_wawa}Hotdurger{}",
         text = {
             "{X:inactive,C:white}^^#1#{} mult.",
             "{C:red}Self Destructs{} on round end."
@@ -1605,12 +1605,13 @@ end
 SMODS.Joker {
     key = "cyan",
     atlas = "sccre",
+    rarity = 4,
     pos = { x = 0, y = 0},
     loc_txt = {
-        name = "Cyan Jonkler",
+        name = "{f:jabong_goog,C:blue}G{}{f:jabong_goog,C:red}o{}{f:jabong_goog,C:money}o{}{f:jabong_goog,C:blue}g{}{f:jabong_goog,C:green}l{}{f:jabong_goog,C:red}e{}",
         text = {
-            "This card gains {X:red,C:blue}X#1#{} Blue Mult, compounding, when a card is scored.",
-            "{C:inactive}figure out the number yourself lmao{}"
+            "{f:jabong_goog}This card gains{} {X:red,C:blue,f:jabong_goog}X#1#{} {f:jabong_goog}Blue Mult, compounding, when a card is scored.{}",
+            "{C:inactive,f:jabong_goog}figure out the number yourself lmao{}"
         },
     },
     config = { extra = { Xmult = 1.5, }},

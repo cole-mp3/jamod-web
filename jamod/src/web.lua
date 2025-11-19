@@ -144,6 +144,14 @@ SMODS.Font {
     path = "Firstgundam-8aVg.ttf"
 }
 SMODS.Font {
+    key = "goog",
+    path = "GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf"
+}
+SMODS.Font {
+    key = "wawa",
+    path = "Angels.ttf"
+}
+SMODS.Font {
     key = "fire",
     path = "SupporterpersonaluseRegular-EazBz.otf"
 }
