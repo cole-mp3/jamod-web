@@ -50,15 +50,6 @@ SMODS.Enhancement {
             "All {C:attention}Metal Enhanced{} Cards."
         }
     },
-    calculate = function(self, card, context)
-        if context.check_enhancement then
-    return {
-        m_gold = true,
-        m_steel = true,
-        m_jabong_copper = true
-    }
-end
-    end
 }
 SMODS.Enhancement {
     key = 'copper',

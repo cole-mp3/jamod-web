@@ -94,6 +94,8 @@ SMODS.Seal {
 
 
 }
+--yes every instance fo bluemult is different
+-- :3
 SMODS.Seal {
     key = 'opermul',
      badge_colour = HEX("1d4fd7"),

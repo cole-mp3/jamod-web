@@ -1290,6 +1290,116 @@ SMODS.Joker:take_ownership('midas_mask',
     },
     true 
 )
+SMODS.Joker:take_ownership('stone', 
+    { 
+	config = { extra = { chips = 25 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_stone
+info_queue[#info_queue + 1] = G.P_CENTERS.m_jabong_alloy
+        local stone_tally = 0
+        if G.playing_cards then
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_stone') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then stone_tally = stone_tally + 1 end
+            end
+        end
+        return { vars = { card.ability.extra.chips, card.ability.extra.chips * stone_tally } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local stone_tally = 0
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_stone') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then stone_tally = stone_tally + 1 end
+            end
+            return {
+                chips = card.ability.extra.chips * stone_tally
+            }
+        end
+    end,
+    in_pool = function(self, args) --equivalent to `enhancement_gate = 'm_stone'`
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_stone') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then
+                return true
+            end
+        end
+        
+    },
+    true 
+)
+-- why are steel and stone joker basically the fucking same
+SMODS.Joker:take_ownership('steel_joker', 
+    { 
+	config = { extra = { xmult = 0.2 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_steel
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_jabong_alloy
+        local steel_tally = 0
+        if G.playing_cards then
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_steel') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then steel_tally = steel_tally + 1 end
+            end
+        end
+        return { vars = { card.ability.extra.xmult, 1 + card.ability.extra.xmult * steel_tally } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local steel_tally = 0
+            for _, playing_card in ipairs(G.playing_cards) do
+                if SMODS.has_enhancement(playing_card, 'm_steel') SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then steel_tally = steel_tally + 1 end
+            end
+            return {
+                Xmult = 1 + card.ability.extra.xmult * steel_tally,
+            }
+        end
+    end,
+    in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_steel') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then
+                return true
+            end
+        end
+        return false
+    end
+    },
+    true 
+)
+SMODS.Joker:take_ownership('ticket', 
+    { 
+	config = { extra = { dollars = 4 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_gold
+          info_queue[#info_queue + 1] = G.P_CENTERS.m_jabong_alloy
+        return { vars = { card.ability.extra.dollars } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_gold')
+            or context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_jabong_alloy') then
+            G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.dollars
+            return {
+                dollars = card.ability.extra.dollars,
+                func = function() 
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            G.GAME.dollar_buffer = 0
+                            return true
+                        end
+                    }))
+                end
+            }
+        end
+    end,
+    in_pool = function(self, args) --equivalent to `enhancement_gate = 'm_gold'`
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_gold') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then
+                return true
+            end
+        end
+        return false
+    end,
+    },
+    true 
+)
 SMODS.Atlas {
     key = "sockandhuh",
     path = "Jonklers/evilsb.png",

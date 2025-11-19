@@ -234,7 +234,8 @@ return {
                 text = {
                     "The mult (or XMult) value this gives",
                     "is equal to the hand's chips.",
-                    "Xmult is that, but times a given amount"
+                    "Xmult is that, but times a given amount.",
+                    "oh and every source of bmult is different LMAOOOOO"
 
                 }
             },
