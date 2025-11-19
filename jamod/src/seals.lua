@@ -96,38 +96,7 @@ SMODS.Seal {
 }
 --yes every instance fo bluemult is different
 -- :3
-SMODS.Seal {
-    key = 'opermul',
-     badge_colour = HEX("1d4fd7"),
-    atlas = "sticklas",
-    pos = {x=0, y=1},
-    config = {extra = {Xmult = 2}},
- loc_vars = function(self, info_queue, card)            
-        info_queue[#info_queue + 1] = { key = 'hc_bmult_comment', set = 'Other' }
-    end,
-    loc_txt = {
-                name = "Multiplication",
-                text = {
-                    "Multiplies the Mult value of the played hand ",
-                    "by the {C:blue}+chips{} value of the",
-                    "current played hand when scored."
-                },
-                label = "Multiplication"
-    },
-    calculate = function(self, card, context)
-            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
-                local current_hand_chips = hand_chips
-                local bluemult = hand_chips * hand_chips
-                return {
-                    mult = bluemult,
-                    message =  "+"..bluemult.." Mult",
-                    colour = G.C.BLUE
-                }
-            end
-    end,
 
-
-}
 
 
 -- all seal is getting a recode.

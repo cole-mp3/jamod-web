@@ -616,7 +616,7 @@ SMODS.Consumable {
         return G.jokers and #G.jokers.cards < G.jokers.config.card_limit
     end
 }
---[[
+
 SMODS.Consumable {
     set = 'Spectral',
     key = "math",
@@ -629,14 +629,12 @@ SMODS.Consumable {
         name = "Arithmetic",
         text = {
             "Gives {C:attention}1{} selected card the",
-            "{C:attention}Addition{} {X:tarot,C:white,E:1}Operator{}",
-            "{C:inactive}im bored{}"
+            "{C:red}Addition{} {X:tarot,C:white,E:1}Operator{}",
         }
     },
-     config = { extra = { seal = 'jabong_operad' }, max_highlighted = 1 },
+     config = { extra = { }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = 'hc_math_comment', set = 'Other' }
-         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.max_highlighted} }
     end,
     use = function(self, card, area, copier)
@@ -653,7 +651,7 @@ SMODS.Consumable {
             trigger = 'after',
             delay = 0.1,
             func = function()
-                conv_card:set_seal(card.ability.extra.seal, nil, true)
+                conv_card:add_sticker("jabong_operad", true)
                 return true
             end
         }))
@@ -668,9 +666,160 @@ SMODS.Consumable {
             end
         }))
     end,
-}  ]]--         
+}         
+SMODS.Consumable {
+    set = 'Spectral',
+    key = "math2",
+     hidden = true,
+ soul_set = 'jabong_Material',
+ can_repeat_soul = true,
+    atlas = "rsatlas",
+    pos = {x = 0, y = 0},
+    loc_txt = {
+        name = "Arithmetic II",
+        text = {
+            "Gives {C:attention}1{} selected card the",
+            "{C:blue}Multiplication{} {X:tarot,C:white,E:1}Operator{}",
+            "{C:inactive}i love this one in specific{}"
+        }
+    },
+     config = { extra = { }, max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'hc_math_comment', set = 'Other' }
+        return { vars = { card.ability.max_highlighted} }
+    end,
+    use = function(self, card, area, copier)
+        local conv_card = G.hand.highlighted[1]
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('jabong_damn')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
 
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                conv_card:add_sticker("jabong_opermul", true)
+                return true
+            end
+        }))
 
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+    end,
+} 
+SMODS.Consumable {
+    set = 'Spectral',
+    key = "math3",
+     hidden = true,
+ soul_set = 'jabong_Material',
+ can_repeat_soul = true,
+    atlas = "rsatlas",
+    pos = {x = 0, y = 0},
+    loc_txt = {
+        name = "Arithmetic III",
+        text = {
+            "Gives {C:attention}1{} selected card the",
+            "{C:green}Subtraction{} {X:tarot,C:white,E:1}Operator{}",
+            "{C:inactive}subtract deez-{}"
+        }
+    },
+     config = { extra = { }, max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'hc_math_comment', set = 'Other' }
+        return { vars = { card.ability.max_highlighted} }
+    end,
+    use = function(self, card, area, copier)
+        local conv_card = G.hand.highlighted[1]
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('jabong_damn')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                conv_card:add_sticker("jabong_opersub", true)
+                return true
+            end
+        }))
+
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+    end,
+} 
+SMODS.Consumable {
+    set = 'Spectral',
+    key = "math4",
+     hidden = true,
+ soul_set = 'jabong_Material',
+ can_repeat_soul = true,
+    atlas = "rsatlas",
+    pos = {x = 0, y = 0},
+    loc_txt = {
+        name = "Arithmetic IV",
+        text = {
+            "Gives {C:attention}1{} selected card the",
+            "{C:green}Squaring{} {X:tarot,C:white,E:1}Operator{}",
+            "{C:inactive}swaws{}"
+        }
+    },
+     config = { extra = { }, max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = 'hc_math_comment', set = 'Other' }
+        return { vars = { card.ability.max_highlighted} }
+    end,
+    use = function(self, card, area, copier)
+        local conv_card = G.hand.highlighted[1]
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('jabong_damn')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                conv_card:add_sticker("jabong_opersquare", true)
+                return true
+            end
+        }))
+
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+    end,
+}
 -- vouchers(I dont wanna make another lua file)
 SMODS.Atlas {
     key = 'vouch',

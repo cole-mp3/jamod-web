@@ -158,7 +158,7 @@ SMODS.Gradient {
 }
 SMODS.Atlas {
     key = "sticklas",
-    path = "sticklas.png"
+    path = "sticklas.png",
     px = 71, 
     py = 95
 }
@@ -170,19 +170,121 @@ SMODS.Sticker {
                 text = {
                     "Adds the {C:blue}+chips{} value of the",
                     "current played hand whne scored."
-                }
+                },
+                label = "Addition"
     },
    atlas = "sticklas",
     pos = { x = 0, y = 0 },
     rate = 0,
     apply = function(self, card, val)
         card.ability[self.key] = val
-    end
+    end,
      calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play or context.joker_main then
                 local current_hand_chips = hand_chips
                 return {
                     chips = hand_chips
+                }
+            end
+    end,
+
+}
+SMODS.Sticker {
+    key = "opermul",
+    badge_colour = HEX 'fda200',
+    loc_txt = {
+                name = "Multiplication",
+                text = {
+                    "Multiplies the Mult value of the played hand ",
+                    "by the {C:blue}+chips{} value of the",
+                    "current played hand when scored."
+                },
+                label = "Multiplication"
+    },
+   atlas = "sticklas",
+    pos = { x = 0, y = 1 },
+    rate = 0,
+    apply = function(self, card, val)
+        card.ability[self.key] = val
+    end,
+     config = {extra = {Xmult = 2}},
+ loc_vars = function(self, info_queue, card)            
+    end,
+   
+    calculate = function(self, card, context)
+            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
+                local current_hand_chips = hand_chips
+                local bluemult = hand_chips * hand_chips
+                return {
+                    mult = bluemult,
+                    message =  "+"..bluemult.." Mult",
+                    colour = G.C.BLUE
+                }
+            end
+    end,
+
+}
+SMODS.Sticker {
+    key = "opersub",
+    badge_colour = HEX 'fda200',
+    loc_txt = {
+                name = "Subtraction",
+                text = {
+                    "subtracts 15% of the played hand's chips,",
+                    "and adds them to mult.",
+                },
+                label = "Subtraction"
+    },
+   atlas = "sticklas",
+    pos = { x = 0, y = 3 },
+    rate = 0,
+    apply = function(self, card, val)
+        card.ability[self.key] = val
+    end,
+     config = {extra = {Xmult = 2}},
+ loc_vars = function(self, info_queue, card)            
+    end,
+   
+    calculate = function(self, card, context)
+            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
+                local current_hand_chips = hand_chips * 0.15
+                return {
+                    chips = 0 - current_hand_chips,
+                    mult = current_hand_chips,
+                    message =  "+"..current_hand_chips.." Mult",
+                    colour = G.C.BLUE
+                }
+            end
+    end,
+
+}
+SMODS.Sticker {
+    key = "opersquare",
+    badge_colour = HEX 'fda200',
+    loc_txt = {
+                name = "Squaring",
+                text = {
+                    "squares 15% of the played hand's chips,",
+                },
+                label = "Squaring"
+    },
+   atlas = "sticklas",
+    pos = { x = 0, y = 4 },
+    rate = 0,
+    apply = function(self, card, val)
+        card.ability[self.key] = val
+    end,
+     config = {extra = {Xmult = 2}},
+ loc_vars = function(self, info_queue, card)            
+    end,
+   
+    calculate = function(self, card, context)
+            if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
+                local current_hand_chips = hand_chips * 0.15
+                return {
+                    chips = current_hand_chips * current_hand_chips,
+                    message =  "+"..current_hand_chips.."",
+                    colour = G.C.BLUE
                 }
             end
     end,
