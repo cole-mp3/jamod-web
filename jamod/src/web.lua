@@ -148,12 +148,16 @@ SMODS.Font {
     path = "GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf"
 }
 SMODS.Font {
+    key = "ascii",
+    path = "NotoSansSymbols2-Regular.ttf"
+}
+SMODS.Font {
     key = "wawa",
     path = "Angels.ttf"
 }
 SMODS.Font {
     key = "emomomo",
-    path = "NotoColorEmoji-Regular.ttf"
+    path = "NotoEmoji-Regular.ttf"
 }
 SMODS.Font {
     key = "fire",

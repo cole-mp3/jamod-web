@@ -382,8 +382,8 @@ SMODS.ConsumableType({
     secondary_colour = G.C.SECONDARY_SET.Tarot,
     key = 'jabong_fish', 
     loc_txt = {
-        name = "{f:jabong_emomomo}Fish{}",
-        collection = '{f:jabong_emomomo}Fish{}',
+        name = "Fish",
+        collection = 'fish',
         undiscovered = { 
  			name = 'hi',
  			text = { 'collect my pages :)' },
@@ -415,7 +415,7 @@ SMODS.Consumable {
     loc_txt = {
         name = "trout",
         text = {
-            "glub"
+            "{f:jabong_emomomo}🐟{}"
         }
     }
 }
