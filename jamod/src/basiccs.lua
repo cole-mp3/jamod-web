@@ -370,8 +370,8 @@ SMODS.ConsumableType({
     secondary_colour = G.C.SECONDARY_SET.Tarot,
     key = 'jabong_fish', 
     loc_txt = {
-        name = "Fish",
-        collection = 'Fish',
+        name = "{f:jabong_emomomo}Fish{}",
+        collection = '{f:jabong_emomomo}Fish{}',
         undiscovered = { 
  			name = 'hi',
  			text = { 'collect my pages :)' },
@@ -416,7 +416,7 @@ SMODS.Consumable {
     loc_txt = {
         name = "tuna",
         text = {
-            "glub"
+            "help me"
         }
     }
 }
@@ -467,7 +467,7 @@ SMODS.Booster {
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "vremade_ar2"
+                "ar2"
             }
         else
             _card = {
@@ -476,7 +476,7 @@ SMODS.Booster {
                 skip_materialize = true,
                 soulable = true,
                 key_append =
-                "vremade_ar2"
+                "ar2"
             }
         end
         return _card

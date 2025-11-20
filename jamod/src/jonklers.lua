@@ -1641,3 +1641,29 @@ SMODS.Joker {
         end
 end
 }
+SMODS.Joker {
+    key = "dishbait",
+    atlas = "sccre",
+    pos = {x = 0 , y = 0},
+    loc_txt = {
+        name = "FISH BAIT {f:jabong_emomomo}🐟{}",
+        text = {
+            "Earn {C:money}$#1#{} per fish at the end of the round.",
+            "{C:inactive}Currently{} {C:money}$#2#{}{C:inactive}.{}"
+        }
+    },
+
+}
+SMODS.Joker {
+    key = "Fisheal",
+    atlas = "sccre",
+    pos = {x = 0 , y = 0},
+    loc_txt = {
+        name = "Maximum Fishing",
+        text = {
+            "Played {C:attention}face cards{} are given a {C:attention}Bass Pro Seal{},",
+            "Played {C:attention}number cards{} create either a fish or a spectral card.",
+        }
+    },
+    --code soon lemme just make the sprites first
+}

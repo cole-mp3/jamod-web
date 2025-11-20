@@ -152,6 +152,10 @@ SMODS.Font {
     path = "Angels.ttf"
 }
 SMODS.Font {
+    key = "emomomo",
+    path = "NotoColorEmoji-Regular.ttf"
+}
+SMODS.Font {
     key = "fire",
     path = "SupporterpersonaluseRegular-EazBz.otf"
 }
