@@ -13,6 +13,18 @@ SMODS.Atlas {
     -- is that fucking amuro ray
 }
 SMODS.Atlas {
+    key = "tung", --dont you fucking say it
+    path = "crads/tungs.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = "waltuh", --*walter white ascii art goes here*
+    path = "crads/chem.png",
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
     key = 'copperizing',
     path = 'crads/coper.png',
     px = 71,
@@ -566,7 +578,7 @@ SMODS.Consumable {
 SMODS.Consumable {
     set = 'jabong_Material',
     key = "tungstenqube",
-    atlas = "rsatlas",
+    atlas = "tung",
     pos = {x = 0, y = 0},
     loc_txt = {
         name = "Tungsten Cube",
@@ -586,7 +598,7 @@ SMODS.Consumable {
 SMODS.Consumable {
     set = 'jabong_Material',
     key = "NaCl",
-    atlas = "rsatlas",
+    atlas = "waltuh",
     pos = {x = 0, y = 0},
     loc_txt = {
         name = "Chemical Synthesis",
@@ -596,8 +608,8 @@ SMODS.Consumable {
             "{C:inactive}But i cant code so its a copy of balaalment{}"
         }
     },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = 'hc_balament_comment', set = 'Other' }
+    loc_vars = function(self, info_queue, card)--▽ i dont even think thisll show
+        info_queue[#info_queue + 1] = { key = 'hc_walter_comment', set = 'Other' }
     end,
      use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
