@@ -1,5 +1,5 @@
---I have to figure out https requests myself cuz im THIS CLOSE TO  LOSING IT
--- so for now, this si where the tags go
+
+-- update: what is happening
 SMODS.Edition {
     key = 'radiant',
     shader = false, --someone please make thhis
@@ -133,7 +133,7 @@ SMODS.Tag {
             return card
         end
     end
-}
+} --theres one mmore after this but ive scrapped it
 -- i think i know how this works
 --update: i did
 SMODS.Font {
@@ -167,6 +167,10 @@ SMODS.Font {
 SMODS.Font {
     key = "gundamit",
     path = "SerpentineRegular.ttf"
+}
+SMODS.Font {
+    key = "turn",
+    path = "NotoSans-Regular.ttf"
 }
 SMODS.Gradient {
     key = 'maxient',

@@ -838,7 +838,7 @@ SMODS.Joker {
     atlas = "redit",
     pos = { x = 0, y = 0},
     loc_txt = {
-        name = "Credit card in the Buffoon Pack",
+        name = "Credit card in the {C:attention}Buffoon Pack{}",
         text  = {
           "Opening a {C:attention}Booster Pack{} will create",
           "A {C:negative}Negative{} Credit card.",
@@ -1322,6 +1322,7 @@ SMODS.Atlas {
 }
 
 
+
 SMODS.Joker {
     key = "thecringler",
     atlas = "sockandhuh",
@@ -1489,7 +1490,7 @@ SMODS.Joker {
         name = "{C:dark_edition,E:1,s:1.1}Moonlight Butterfly{} {X:chips,C:white,s:0.8}(awakening:Turn_A){}",
         text = {
             "{C:attention}Every card{} is considered to have every enhancement,{C:inactive,s:0.8}(except stone){}",
-            "and played cards get a {C:red}Turn A Seal{}. {C:red}Turn A seal{} cards give {X:inactive,C:white}^#1#{} chips"
+            "and played cards get a {C:red,f:jabong_turn}Ɐ{} {C:red}Seal{}. {C:red,f:jabong_turn}Ɐ{} {C:red}seal{} cards give {X:inactive,C:white}^#1#{} chips"
 
         },
     },
@@ -1510,7 +1511,7 @@ SMODS.Joker {
             if numbr > 0 then
                 return {
                     
-                    message = "Ɐ!",
+                    message = "{f:jabong_turn}Ɐ!{}",
                     colour = G.C.TAROT
                 }
             end

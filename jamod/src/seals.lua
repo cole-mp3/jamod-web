@@ -25,7 +25,7 @@ SMODS.Seal {
                     "{C:blue}+#1#{} extra chips,",
                     "Considered a {C:attention}Stone Card{}."
                 },
-                label = "Stone Seal :)"
+                label = "Stone Seal"
     },
     calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
@@ -69,8 +69,8 @@ SMODS.Seal {
     end,
 }
 SMODS.Seal {
-    key = 'butterlfy',
-     badge_colour = HEX("1d4fd7"),
+    key = 'butterlfy', --turn a, gundam
+     badge_colour = HEX("00ffff"),
     config = { extra = { Emult = 1.23, dollars = 25} },
     loc_vars = function(self, info_queue)
         return { vars = { self.config.extra.Emult, self.config.extra.dollars } }
@@ -78,12 +78,12 @@ SMODS.Seal {
     atlas = "satlas",
     pos = {x=0, y=0},
     loc_txt = {
-                name = "Turn A Seal",
+                name = "{f:jabong_turn}Ɐ{} Seal",
                 text = {
                     "{X:incative,C:white}^^#1#{} Mult,",
                     "{C:money}+$#2#{}"
                 },
-                label = "Turn A Gundam"
+                label = "{f:jabong_turn}Ɐ{}"
     },
     calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
