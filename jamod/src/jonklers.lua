@@ -1303,7 +1303,7 @@ SMODS.Joker:take_ownership('ticket',
             }
         end
     end,
-    in_pool = function(self, args) --equivalent to `enhancement_gate = 'm_gold'`
+    in_pool = function(self, args) 
         for _, playing_card in ipairs(G.playing_cards or {}) do
             if SMODS.has_enhancement(playing_card, 'm_gold') or SMODS.has_enhancement(playing_card, 'm_jabong_alloy') then
                 return true
@@ -1322,7 +1322,6 @@ SMODS.Atlas {
 }
 
 
---maybe i fixed it, we shall see
 SMODS.Joker {
     key = "thecringler",
     atlas = "sockandhuh",
