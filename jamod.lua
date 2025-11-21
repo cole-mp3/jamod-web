@@ -106,11 +106,14 @@ SMODS.Sound{
 }
 
 SMODS.current_mod.config_tab = function()
-	return {n = G.UIT.ROOT, config = {
-		align = "cm", padding = 0.1
-	}, nodes = {
- {n = G.UIT.T, config = {text = "im workin on it ok be patient", colour = G.C.UI.TEXT_LIGHT, scale = 1.1}}
-    }}
+	return {n = G.UIT.ROOT, config = {align = "cm", padding = 0.1}, nodes = {
+ {n = G.UIT.C, config = {align = "cm", colour = G.C.UI.TEXT_LIGHT, scale = 1.1}},
+ {n = G.UIT.C, config = {align = "cm", colour = G.C.UI.TEXT_LIGHT, scale = 1.1},nodes ={
+     {n=G.UIT.R, config={align = "cm", colour = G.C.UI.TEXT_LIGHT,}, nodes={}}, -- 3
+    {n=G.UIT.R, config={align = "cm", colour = G.C.UI.TEXT_LIGHT,}, nodes={}}  -- 4
+  }}
+
+ }}, 
 end
 
 
