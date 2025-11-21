@@ -54,11 +54,6 @@ SMODS.Stake {
     colour = G.C.GOLD,
     shiny = true,
 }]]
-    --[[
-    SMODS.Sticker {
-    key = "spob"
-    }
-    ]]
 SMODS.ObjectType {
      key = "balaaljonklers",
     default = "j_ice_cream",
@@ -455,71 +450,7 @@ SMODS.Rank {
     }
 }
 
-SMODS.PokerHand({
-    key = "pkr_funny",
-    mult = 69,
-    chips = 420,
-    l_mult = 3,
-    l_chips = 30,
-    example = {
-        { 'S_6', true }, 
-        { 'D_9', true },
-        { 'H_4', true, enhancement = 'm_lucky' }, 
-        { 'S_3', true },
-        { 'D_7', false, seal = 'Red' } 
-    },
-loc_txt = {
-    name = "Funny",
-    description = {
-        "The least funny hand ever",
-        "(NOTICE, A ZERO IS REQUIRED TO PLAY THIS HAND)"
-    }
-},
-    
 
-    evaluate = function(parts, hand)
-        if #hand >= 3 then
-            local _has9 = false
-            local _has6 = false
-            local _has4 = false
-             local _has2 = false
-              local _hasZ = false
-            local eligible_cards = {}
-            local other_hands = next(parts._flush) or next(parts._straight) or next(parts._all_pairs)
-
-            for i, card in ipairs(hand) do
-                if card:get_id() == 9 and _has9 == false then
-                    _has9 = true
-                    eligible_cards[#eligible_cards + 1] = card
-                elseif card:get_id() == 6 and _has6 == false then
-                    _has6 = true
-                    eligible_cards[#eligible_cards + 1] = card
-                elseif card:get_id() == 4 and _has4 == false then
-                    _has4 = true
-                    eligible_cards[#eligible_cards + 1] = card
-                elseif card:get_id() == 2 and _has2 == false then
-                    _has2 = true
-                    eligible_cards[#eligible_cards + 1] = card
-                elseif card:get_id() == SMODS.Ranks['jabong_Zero'].id and _hasz == false then
-                    _hasz = true
-                    eligible_cards[#eligible_cards + 1] = card
-                end
-            end
-
-
-            if _has9 and _has6 and _has4 and _has2 and _hasZ and not other_hands then
-                return{eligible_cards}
-            end
-        end
-
-
-    end,
-
-
-    modify_display_text = function(self, cards, scoring_hand)
-        return pkr_funny
-    end,
-})
 
     
     

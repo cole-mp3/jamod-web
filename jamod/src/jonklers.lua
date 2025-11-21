@@ -781,20 +781,6 @@ return {
 
 }
 
-SMODS.Rarity {
-    key = "Feesh",
-    pools = {
-        ["Joker"] = true
-    },
-    default_weight = 0.00,
-    badge_colour = HEX('ADD8E6'),
-    loc_txt = {
-        name = "Fishing"
-    },
-    get_weight = function(self, weight, object_type)
-        return weight
-    end,
-}
 SMODS.Atlas {
     key = "thehoooo",
     path = "Jonklers/fisher.png",
@@ -893,7 +879,7 @@ SMODS.Joker {
     key = "basspro", --alias go do this one
     atlas = "sccre",
     pos = { x = 0, y = 0},
-    rarity = "jabong_Feesh",
+    rarity = 3,
     blueprint_compat = true,
     cost = 10,
     discovered = true,

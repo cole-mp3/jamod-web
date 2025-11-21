@@ -832,6 +832,7 @@ SMODS.Consumable {
         }))
     end,
 }
+
 -- vouchers(I dont wanna make another lua file)
 SMODS.Atlas {
     key = 'vouch',
@@ -842,7 +843,7 @@ SMODS.Atlas {
 }
 
 SMODS.Voucher {
-    key = 'mindscape',
+    key = 'Mindscape',
     atlas = 'vouch',
     pos = {x = 0, y = 0},
    
@@ -873,7 +874,7 @@ SMODS.Voucher {
     loc_txt = {
         name = "Fishing...?",
         text = {
-            "{C:attention}Fishing{} jokers and consumables can appear in the shop.",
+            "{C:attention}Fishing{} consumables can appear in the shop.",
             "Creates {C:attention}fisherman{} joker when redeemed."
         }
     },
@@ -881,38 +882,16 @@ SMODS.Voucher {
     redeem = function(self, card)
         G.E_MANAGER:add_event(Event({
             func = function()
-                -- just like the last one, let's see if it works :)
                 SMODS.add_card { 
                     key = "j_jabong_fisherman",
                     edition = 'e_negative', eternal = true, }
                     check_for_unlock { type = 'ach_fishing' }
-                G.GAME.jabong_Feesh_rate = card.ability.extra.rate
+
                 return true
             end
         }))
     end
 }
-SMODS.Voucher {
-    key = 'fishingplus',
-    atlas = 'vouch',
-    pos = {x = 1, y = 0},
-   
-    loc_txt = {
-        name = "Advanced Fishing Tactics",
-        text = {
-            "{C:attention}Fishing{} jokers and consumables appear more.",
-        }
-    },
-    config = { extra = { rate = 0.07 } },
-    redeem = function(self, card)
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                
-                G.GAME.jabong_Feesh_rate = card.ability.extra.rate
-                return true
-            end
-        }))
-    end
-}
+
 
 
