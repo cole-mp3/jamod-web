@@ -206,9 +206,9 @@ return {
                     "Operators"
                 },
                 text = {
-                    "These 'seals' do various things",
-                    "based on their operations",
-                    "{C:inactive}(+,-,*,/,etc.), i havent done the rest yet{}"
+                    "These 'seals' do various things involving the played hand's ",
+                    "chips value, based on their operations",
+                    "{C:inactive}(+,-,*,/,etc.){}"
                 },
             },
             
@@ -254,7 +254,7 @@ return {
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣧⡘⣿⠏⠄⣠⣤⣄⣠⣤⣀⣠⣄⠻⢸⠃⣼⣿⣿⣿⣿⣿⣿⣿{}",
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣿⣷⣸⠄⢐⢿⡏⠁⠄⠈⢹⠿⠟⢀⣾⣾⣿⣿⣿⣿⣿⣿⣿⣿{}",
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠃⠈⠁⠄⠄⠄⠈⠄⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿{}",
-                    "                      jesse, we need to cook         "
+                    "{f:jabong_wawa}jesse, we need to cook{}"
                 }
             },
             hc_vegeta_comment = {
