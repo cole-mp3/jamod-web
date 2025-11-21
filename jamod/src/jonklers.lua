@@ -1532,7 +1532,7 @@ SMODS.Joker {
     pos = {x = 0, y = 0},
     rarity = 1,
     loc_txt = {
-        name = "{f:jabong_wawa}Hotdurger{}",
+        name = "{f:jabong_turn}Hotdurger{}",
         text = {
             "{X:inactive,C:white}^^#1#{} mult.",
             "{C:red}Self Destructs{} on round end."
