@@ -119,10 +119,26 @@ return {
                 name = "Slamo Deck",
                 text = {
                     "{C:attention}-1{} hands and discards, start with ",
-                    "2 Copies of {C:attention}The Soul{}."
+                    "1 Copies of {C:attention}The fool{}.",
+                    "Every card is a {C:attention}slamo{}."
                 }
             },
 
+        },
+        Voucher = {
+            omen_globe = {
+                name = "Omen Globe",
+                text = {
+                    "{C:spectral}Spectral{} cards may",
+                    "appear in any of",
+                    "the {C:attention}Arcana Packs{} or {C:attention}Material Packs{}",
+                },
+                unlock = {
+                    "Use a total of {C:attention}#1#",
+                    "{C:tarot}Tarot{} cards from any",
+                    "{C:tarot}Arcana Pack",
+                    "{C:inactive}(#2#)",
+                },
         },
         Other = {
             hc_longass_comment = {
@@ -238,6 +254,7 @@ return {
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣧⡘⣿⠏⠄⣠⣤⣄⣠⣤⣀⣠⣄⠻⢸⠃⣼⣿⣿⣿⣿⣿⣿⣿{}",
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣿⣷⣸⠄⢐⢿⡏⠁⠄⠈⢹⠿⠟⢀⣾⣾⣿⣿⣿⣿⣿⣿⣿⣿{}",
                     "{f:jabong_ascii}⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠃⠈⠁⠄⠄⠄⠈⠄⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿{}",
+                    "                      jesse, we need to cook         "
                 }
             },
             hc_vegeta_comment = {
@@ -1657,10 +1674,8 @@ return {
 },
         labels = {
             jabong_radiant = "Radiant",
-            jabong_stone_seal = "Stone Seal",
-            jabong_stateseal = "Statefarm :)"
         },
 
 	}
     
-		
+}		

@@ -10,7 +10,7 @@ SMODS.Back {
     key = 'slamo', 
      atlas = 'datlas',
      pos = {x = 0, y = 0},
-    config = { dollars = 20, hands = -1, discards = -1, consumables = {'c_soul','c_soul'} },
+    config = { dollars = 20, hands = -1, discards = -1, consumables = {'c_fool'} },
     loc_vars = function(self, info_queue, back)
         return { vars = { self.config.dollars, self.config.hands, self.config.discards, 
     localize { type = 'name_text', key = self.config.consumables[1], set = 'Spectral' }
@@ -53,14 +53,14 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
---[[
+
 SMODS.Back {
     key = "luchalibre",
     loc_txt = {
         name = "lucha Lucha libre",
         text = {
             "Creates a {C:attention}Luchador Tag{} after defeating a blind.",
-            "{C:inactive}basically its bad anaglyph deck{}"
+            "{C:inactive}basically its endless chicot after ante 1 boss{}"
         }
     },
     atlas = "spanish",
@@ -70,7 +70,7 @@ SMODS.Back {
         return { vars = { localize { type = 'name_text', key = 'jabong_tag_luchatag', set = 'Tag' } } }
     end,
     calculate = function(self, back, context)
-        if context.end_of_round and context.main_eval and context.beat_boss then
+         if context.round_eval and G.GAME.last_blind and G.GAME.last_blind.boss then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     add_tag(Tag('jabong_tag_luchatag'))
@@ -81,4 +81,4 @@ SMODS.Back {
             }))
         end
     end,
-}]]
+}

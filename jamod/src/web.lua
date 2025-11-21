@@ -61,7 +61,8 @@ SMODS.Tag {
          if context.type == 'new_blind_choice' then
              tag:yep('+', G.C.GREEN, function()
             SMODS.add_card {
-            key = "j_luchador",                       
+            key = "j_luchador", 
+            edition = "e_negative"                      
                          }
             tag.triggered = true
             return true

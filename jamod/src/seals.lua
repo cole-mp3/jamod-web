@@ -25,6 +25,7 @@ SMODS.Seal {
                     "{C:blue}+#1#{} extra chips,",
                     "Considered a {C:attention}Stone Card{}."
                 },
+                label = "Stone Seal :)"
     },
     calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
@@ -57,6 +58,7 @@ SMODS.Seal {
                     "{C:blue}X#1#{} Mult.",
                     "{C:inactive}pleasedontsuemepleasedontsuemePLEASE{}"
                 },
+                label = "Statefarm Seal"
     },
      calculate = function(self, card, context)
             if context.main_scoring and context.cardarea == G.play or context.repetiton and context.cardarea == G.play then
