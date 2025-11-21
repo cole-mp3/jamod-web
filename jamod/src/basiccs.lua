@@ -441,7 +441,7 @@ SMODS.Atlas {
 SMODS.Booster {
     key = "matbooster",
     atlas = "boot",
-    poc = {x = 0 , y = 0},
+    pos = {x = 0 , y = 0},
     loc_txt = {
         name = "Material Pack",
         description = {
@@ -503,7 +503,7 @@ SMODS.Booster {
 SMODS.Booster {
     key = "matbooster2",
     atlas = "boot",
-    poc = {x = 1 , y = 0},
+    pos = {x = 1 , y = 0},
     loc_txt = {
         name = "Mega Material Pack",
         description = {
@@ -561,13 +561,14 @@ SMODS.Booster {
         return _card
     end,
 }
+
 SMODS.Booster {
     key = "balapack",
     weight = 0.6,
-    kind = 'Buffoon', -
+    kind = 'Buffoon', 
     cost = 4,
    atlas = "boot",
-    poc = {x = 3 , y = 0},
+    pos = {x = 2 , y = 0},
     config = { extra = 2, choose = 1 },
      loc_txt = {
         name = "Balaal Pack",
@@ -593,10 +594,10 @@ SMODS.Booster {
 SMODS.Booster {
     key = "balapack2",
     weight = 0.6,
-    kind = 'Buffoon', -
+    kind = 'Buffoon', 
     cost = 4,
    atlas = "boot",
-    poc = {x = 4 , y = 0},
+    pos = {x = 3 , y = 0},
     config = { extra = 4, choose = 2 },
      loc_txt = {
         name = "Mega Balaal Pack",

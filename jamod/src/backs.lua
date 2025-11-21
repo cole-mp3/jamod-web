@@ -54,31 +54,4 @@ SMODS.Atlas {
     py = 95
 }
 
-SMODS.Back {
-    key = "luchalibre",
-    loc_txt = {
-        name = "lucha Lucha libre",
-        text = {
-            "Creates a {C:attention}Luchador Tag{} after defeating a blind.",
-            "{C:inactive}basically its endless chicot after ante 1 boss{}"
-        }
-    },
-    atlas = "spanish",
-    pos = { x = 0, y = 0 },
-    unlocked = false,
-    loc_vars = function(self, info_queue, back)
-        return { vars = { localize { type = 'name_text', key = 'jabong_tag_luchatag', set = 'Tag' } } }
-    end,
-    calculate = function(self, back, context)
-         if context.round_eval and G.GAME.last_blind and G.GAME.last_blind.boss then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    add_tag(Tag('jabong_tag_luchatag'))
-                    play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
-                    play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
-                    return true
-                end
-            }))
-        end
-    end,
-}
+

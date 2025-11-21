@@ -1,7 +1,7 @@
 -- alias i will fucking kill you
 
 --the below is commented cuz im not sure if it works or not an i refuse to gamble
--
+
 SMODS.Sound ({
     vol = 0.6,
     pitch = 1,
@@ -9,7 +9,7 @@ SMODS.Sound ({
     path = "music_vigilante.ogg",
     select_music_track = function()
         if G.jokers then
-            if next(SMODS.find_card("j_jabong_charisafuckingsimp")) then
+            if next(SMODS.find_card("j_jabong_turns")) then
                 return SMODS.Mods.jamod.config.vigilante
             end
         end

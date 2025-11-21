@@ -15,7 +15,7 @@ SMODS.Blind {
     boss = { min = 1 },
     boss_colour = HEX("f7e948"),
     loc_txt = {
-        name = "Spoop",
+        name = "The Bob",
         text = {
             "sea Aweed.",
             "(credit to vo memes)"

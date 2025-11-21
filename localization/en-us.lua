@@ -133,13 +133,9 @@ return {
                     "appear in any of",
                     "the {C:attention}Arcana Packs{} or {C:attention}Material Packs{}",
                 },
-                unlock = {
-                    "Use a total of {C:attention}#1#",
-                    "{C:tarot}Tarot{} cards from any",
-                    "{C:tarot}Arcana Pack",
-                    "{C:inactive}(#2#)",
-                },
+                
         },
+    },
         Other = {
             hc_longass_comment = {
                 name = {
@@ -1673,9 +1669,8 @@ return {
 			
 },
         labels = {
-            jabong_radiant = "Radiant",
+        
         },
 
 	}
-    
-}		
+    		

@@ -1476,7 +1476,7 @@ key = "chard",
     end
 } 
 SMODS.Joker {
-    key = "turn",
+    key = "turns",
     atlas = "sccre",
     pos = { x = 0, y = 0},
      rarity = 'jabong_Max',
